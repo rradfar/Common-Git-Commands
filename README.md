@@ -26,9 +26,20 @@
 | git rm --cached `[file-name]`               | Remove `[file-name]` from the staging area                                                       |
 | git status                                  | Displays state of the working directory and the staging area                                     |
 
-## Syncing a Fork
+## To sync a fork
 
-`$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git`  
-`$ git fetch upstream`  
-`$ git checkout master`  
-`$ git merge upstream/master`  
+```git
+git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+git fetch upstream
+git checkout master
+git merge upstream/master
+```
+
+## To reset a local master branch to the upstream
+
+```git
+git checkout master
+git pull upstream master
+git reset --hard upstream/master
+git push origin master --force
+```
